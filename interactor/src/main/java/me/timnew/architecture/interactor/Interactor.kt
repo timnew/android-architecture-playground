@@ -1,4 +1,4 @@
-package me.timnew.interactor.architecture
+package me.timnew.architecture.interactor
 
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable

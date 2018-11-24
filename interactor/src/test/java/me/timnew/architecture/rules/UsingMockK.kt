@@ -1,4 +1,4 @@
-package me.timnew.interactor.rules
+package me.timnew.architecture.rules
 
 import io.mockk.MockKAnnotations
 import io.mockk.unmockkAll

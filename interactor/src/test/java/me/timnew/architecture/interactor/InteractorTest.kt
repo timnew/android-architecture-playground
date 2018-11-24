@@ -1,10 +1,10 @@
-package me.timnew.interactor.architecture
+package me.timnew.architecture.interactor
 
 import io.mockk.impl.annotations.RelaxedMockK
 import io.mockk.impl.annotations.SpyK
 import io.mockk.verify
 import io.reactivex.disposables.Disposable
-import me.timnew.interactor.rules.UsingMockK
+import me.timnew.architecture.rules.UsingMockK
 import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.assertThatThrownBy
 import org.junit.Rule
