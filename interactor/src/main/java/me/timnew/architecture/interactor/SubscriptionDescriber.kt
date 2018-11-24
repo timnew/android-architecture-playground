@@ -7,10 +7,7 @@ typealias SubscriptionDescriptor = SubscriptionDescriber.(SubscriptionDescriber)
 class SubscriptionDescriber(
   descriptor: SubscriptionDescriptor,
   private val subscriptions: MutableList<Disposable> = mutableListOf()
-) :
-  Iterable<Disposable> by subscriptions,
-  Iterator<Disposable> by subscriptions.iterator() {
-
+) : Iterable<Disposable> by subscriptions {
   init {
     descriptor(this)
   }

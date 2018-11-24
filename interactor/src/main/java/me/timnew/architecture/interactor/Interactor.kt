@@ -35,5 +35,5 @@ abstract class Interactor : Disposable {
     isRunning = false
   }
 
-  protected abstract fun subscription(): Iterator<Disposable>
+  protected abstract fun subscription(): Iterable<Disposable>
 }

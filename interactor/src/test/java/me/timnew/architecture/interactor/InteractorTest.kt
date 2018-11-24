@@ -23,10 +23,10 @@ class InteractorTest {
 
     @SpyK
     var interactor: Interactor = object : Interactor() {
-        override fun subscription(): Iterator<Disposable> = iterator {
-            yield(disposable)
-            yield(anotherDisposable)
-        }
+        override fun subscription(): Iterable<Disposable> = listOf(
+            disposable,
+            anotherDisposable
+        )
     }
 
     @Test
