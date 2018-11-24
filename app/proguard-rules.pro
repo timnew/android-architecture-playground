@@ -19,3 +19,22 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-dontwarn javax.annotation.**
+
+-dontwarn dagger.android.**
+
+-keep class androidx.** { *; }
+-keep interface androidx.** { *; }
+-dontwarn androidx.**
+
+-keep class com.google.android.material.** { *; }
+-dontwarn com.google.android.material.**
+-dontnote com.google.android.material.**
+
+-dontwarn okio.**
+-dontwarn com.squareup.okhttp3.**
+-keep class com.squareup.okhttp3.** { *; }
+-dontwarn org.codehaus.mojo.animal_sniffer.**
+-keep interface com.squareup.okhttp3.* { *; }
+
