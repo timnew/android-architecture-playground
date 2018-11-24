@@ -1,1 +1,1 @@
-include ':app', ':interactor'
+include ':app', ':interactor', ':events'
