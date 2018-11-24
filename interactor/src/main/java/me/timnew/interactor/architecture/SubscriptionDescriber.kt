@@ -28,5 +28,5 @@ class SubscriptionDescriber(
     disposable.forEach { subscriptions.add(it) }
 }
 
-fun describeSubscription(descriptor: SubscriptionDescriptor) =
+fun subscriptionAs(descriptor: SubscriptionDescriptor) =
   SubscriptionDescriber(descriptor)

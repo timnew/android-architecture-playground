@@ -19,7 +19,7 @@ class SubscriptionDescriberTest {
 
     @Test
     fun `should create subscription`() {
-        val subscription = subscribe {}
+        val subscription = subscriptionAs {}
 
         ObjectAssert(subscription).isInstanceOf(Iterator::class.java)
         ObjectAssert(subscription).isInstanceOf(Iterable::class.java)
@@ -27,7 +27,7 @@ class SubscriptionDescriberTest {
 
     @Test
     fun `should populate members`() {
-        val subscription = subscribe {
+        val subscription = subscriptionAs {
             it has createSubscription()
             it has createSubscription()
         }
@@ -37,7 +37,7 @@ class SubscriptionDescriberTest {
 
     @Test
     fun `should populate iterable members`() {
-        val subscription = subscribe {
+        val subscription = subscriptionAs {
             it has listOf(
                 createSubscription(),
                 createSubscription()
@@ -49,7 +49,7 @@ class SubscriptionDescriberTest {
 
     @Test
     fun `should populate iterator`() {
-        val subscription = subscribe {
+        val subscription = subscriptionAs {
             it has iterator {
                 yield(createSubscription())
                 yield(createSubscription())
