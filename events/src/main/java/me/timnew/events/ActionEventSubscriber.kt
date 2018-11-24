@@ -6,9 +6,7 @@ import io.reactivex.disposables.Disposable
 data class ActionEventSubscriber<TEvent, TAction>(
   @PublishedApi internal val parent: EventSubscriber,
   private val typedSource: Observable<TEvent>
-) :
-  IEventSubscriber by parent,
-  Iterable<Disposable> by parent.subscriptions
+) : Iterable<Disposable> by parent.subscriptions
   where TEvent : ActionEvent<TAction> {
 
   private inline fun buildChain(action: TAction, builder: Observable<TEvent>.() -> Disposable) =

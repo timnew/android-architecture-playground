@@ -11,5 +11,6 @@ interface ActionEvent<T> {
   val action: T
 }
 
-interface BehaviorEvent<TSubject, TAction> : SubjectEvent<TSubject>, ActionEvent<TAction>
+interface BehaviorEvent<TSubject, TAction> : SubjectEvent<TSubject>,
+  ActionEvent<TAction>
 

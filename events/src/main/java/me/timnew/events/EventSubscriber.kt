@@ -5,12 +5,7 @@ import io.reactivex.disposables.Disposable
 data class EventSubscriber(
   val eventSource: EventSource,
   val subscriptions: MutableList<Disposable> = mutableListOf()
-) :
-  IEventSubscriber,
-  Iterable<Disposable> by subscriptions {
-
-  override fun belongsTo(subscription: me.timnew.interactor.SubscriptionDescriber) =
-    subscription.has(subscriptions)
+) : Iterable<Disposable> by subscriptions {
 
   @Suppress("unused")
   inline fun <reified TEvent, reified TAction> respondAction(
