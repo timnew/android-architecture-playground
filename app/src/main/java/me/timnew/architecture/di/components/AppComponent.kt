@@ -5,6 +5,7 @@ import dagger.Component
 import me.timnew.architecture.App
 import me.timnew.architecture.di.modules.ActivityBindingModule
 import me.timnew.architecture.di.modules.FragmentBindingModule
+import javax.inject.Singleton
 
 @Component(
   modules = [
@@ -12,6 +13,7 @@ import me.timnew.architecture.di.modules.FragmentBindingModule
     FragmentBindingModule::class
   ]
 )
+@Singleton
 interface AppComponent {
   fun injectApp(app: App)
 
