@@ -3,7 +3,7 @@
           package="me.timnew.architecture">
 
     <application
-            android:name=".App"
+            android:name=".example.App"
             android:allowBackup="true"
             android:fullBackupContent="@xml/backup_descriptor"
             android:icon="@mipmap/ic_launcher"
@@ -12,7 +12,7 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity
-                android:name=".presentation.MainActivity"
+                android:name=".example.presentation.MainActivity"
                 android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

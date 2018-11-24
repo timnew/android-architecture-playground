@@ -1,4 +1,4 @@
-package me.timnew.architecture.di
+package me.timnew.architecture.example.di
 
 import javax.inject.Scope
 

@@ -1,4 +1,4 @@
-package me.timnew.architecture.di.modules
+package me.timnew.architecture.example.di.modules
 
 import dagger.Module
 

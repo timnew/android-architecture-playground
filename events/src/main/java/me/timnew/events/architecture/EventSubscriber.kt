@@ -1,4 +1,4 @@
-package me.timnew.events
+package me.timnew.events.architecture
 
 import io.reactivex.disposables.Disposable
 

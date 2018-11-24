@@ -1,4 +1,4 @@
-package me.timnew.architecture
+package me.timnew.architecture.example
 
 import android.app.Activity
 import android.app.Application

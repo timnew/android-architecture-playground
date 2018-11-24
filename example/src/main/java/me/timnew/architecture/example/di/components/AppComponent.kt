@@ -1,10 +1,10 @@
-package me.timnew.architecture.di.components
+package me.timnew.architecture.example.di.components
 
 import dagger.BindsInstance
 import dagger.Component
-import me.timnew.architecture.App
-import me.timnew.architecture.di.modules.ActivityBindingModule
-import me.timnew.architecture.di.modules.FragmentBindingModule
+import me.timnew.architecture.example.App
+import me.timnew.architecture.example.di.modules.ActivityBindingModule
+import me.timnew.architecture.example.di.modules.FragmentBindingModule
 import javax.inject.Singleton
 
 @Component(
