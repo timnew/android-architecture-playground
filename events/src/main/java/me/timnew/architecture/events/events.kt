@@ -1,4 +1,4 @@
-package me.timnew.events.architecture
+package me.timnew.architecture.events
 
 typealias Responder<T> = (T) -> Unit
 typealias NoParamResponder = () -> Unit
