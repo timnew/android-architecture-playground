@@ -21,7 +21,6 @@ class SubscriptionDescriberTest {
     fun `should create subscription`() {
         val subscription = subscriptionAs {}
 
-        ObjectAssert(subscription).isInstanceOf(Iterator::class.java)
         ObjectAssert(subscription).isInstanceOf(Iterable::class.java)
     }
 

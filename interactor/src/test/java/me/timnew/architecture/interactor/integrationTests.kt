@@ -2,6 +2,7 @@ package me.timnew.architecture.interactor
 
 import io.mockk.Ordering
 import io.mockk.spyk
+import io.mockk.unmockkAll
 import io.mockk.verify
 import io.reactivex.Observable
 import io.reactivex.disposables.Disposable
@@ -43,6 +44,7 @@ class UseSubscriptionAsTest {
   @After
   fun tearDown() {
     interactor.dispose()
+    unmockkAll()
   }
 
   @Test
@@ -70,7 +72,7 @@ class UseSubscriptionAsTest {
 
     interactor.start()
 
-    Thread.sleep(25)
+    Thread.sleep(10)
 
     interactor.stop()
 
@@ -108,6 +110,7 @@ class UseIteratorTest {
   @After
   fun tearDown() {
     interactor.dispose()
+    unmockkAll()
   }
 
   @Test
@@ -135,7 +138,7 @@ class UseIteratorTest {
 
     interactor.start()
 
-    Thread.sleep(25)
+    Thread.sleep(18)
 
     interactor.stop()
 
