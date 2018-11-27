@@ -44,6 +44,11 @@ class EventSubscriberTest {
   }
 
   @Test
+  fun `should be iterable`() {
+    assertThat(subscriber).isInstanceOf(Iterable::class.java)
+  }
+
+  @Test
   fun `should delegate call the event subscriber for singleton event with no param`() {
     val eventSubscriber = eventSource.respond(event, noParamResponder)
 
@@ -60,7 +65,7 @@ class EventSubscriberTest {
     verify(exactly = 1) { noParamResponder() }
 
     subscriptions.forEach { it.dispose() }
-    eventSource.publish(TestSingletonEvent)
+    eventSource.publish(event)
 
     verify(exactly = 1) { noParamResponder() }
 
@@ -86,7 +91,7 @@ class EventSubscriberTest {
     verify(exactly = 1) { responder(eq(event)) }
 
     subscriptions.forEach { it.dispose() }
-    eventSource.publish(TestSingletonEvent)
+    eventSource.publish(event)
 
     verify(exactly = 1) { responder(any()) }
 
@@ -112,7 +117,7 @@ class EventSubscriberTest {
     verify(exactly = 1) { responder(eq(event)) }
 
     subscriptions.forEach { it.dispose() }
-    eventSource.publish(TestSingletonEvent)
+    eventSource.publish(event)
 
     verify(exactly = 1) { responder(any()) }
 
