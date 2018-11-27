@@ -27,6 +27,10 @@ data class ActionEventSubscriber<TEvent, TAction>(
     parent.respond(event, responder)
 
   @Suppress("unused")
+  inline fun <reified TEvent> respond(@Suppress("UNUSED_PARAMETER") event: TEvent, noinline responder: Responder<TEvent>): EventSubscriber =
+    parent.respond(event, responder)
+
+  @Suppress("unused")
   inline fun <reified T> respond(noinline responder: Responder<T>): EventSubscriber =
     parent.respond(responder)
 }

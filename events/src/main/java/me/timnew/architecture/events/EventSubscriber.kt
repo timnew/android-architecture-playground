@@ -3,8 +3,8 @@ package me.timnew.architecture.events
 import io.reactivex.disposables.Disposable
 
 data class EventSubscriber(
-  val eventSource: EventSource,
-  val subscriptions: MutableList<Disposable> = mutableListOf()
+  @PublishedApi internal val eventSource: EventSource,
+  @PublishedApi internal val subscriptions: MutableList<Disposable> = mutableListOf()
 ) : Iterable<Disposable> by subscriptions {
 
   @Suppress("unused")
@@ -28,6 +28,14 @@ data class EventSubscriber(
     apply {
       subscriptions.add(
         eventSource.allEvents.ofType(TEvent::class.java).subscribe { responder() }
+      )
+    }
+
+  @Suppress("unused")
+  inline fun <reified TEvent> respond(@Suppress("UNUSED_PARAMETER") event: TEvent, noinline responder: Responder<TEvent>): EventSubscriber =
+    apply {
+      subscriptions.add(
+        eventSource.allEvents.ofType(TEvent::class.java).filter { it == event }.subscribe(responder)
       )
     }
 

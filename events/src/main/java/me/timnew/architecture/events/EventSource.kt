@@ -36,6 +36,10 @@ open class EventSource(
     EventSubscriber(this).respond(event, responder)
 
   @Suppress("unused")
+  inline fun <reified TEvent> respond(@Suppress("UNUSED_PARAMETER") event: TEvent, noinline responder: Responder<TEvent>): EventSubscriber =
+    EventSubscriber(this).respond(event, responder)
+
+  @Suppress("unused")
   inline fun <reified T> respond(noinline responder: Responder<T>): EventSubscriber =
     EventSubscriber(this).respond(responder)
 }
